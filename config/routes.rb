@@ -1,6 +1,10 @@
 require "sidekiq/web" # require the web UI
 
 Rails.application.routes.draw do
+  resources :morning_worship_videos
+  resources :video_transcriptions
+  resources :video_technical_details
+  resources :videos
   mount Sidekiq::Web => "/sidekiq" # access it at http://localhost:3000/sidekiq
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

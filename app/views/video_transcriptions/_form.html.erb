@@ -1,0 +1,57 @@
+<%= form_with(model: video_transcription, class: "contents") do |form| %>
+  <% if video_transcription.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(video_transcription.errors.count, "error") %> prohibited this video_transcription from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% video_transcription.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :video_id %>
+    <%= form.text_field :video_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_transcription.errors[:video_id].none?, "border-red-400 focus:outline-red-600": video_transcription.errors[:video_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :transcription_file %>
+    <%= form.file_field :transcription_file, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_transcription.errors[:transcription_file].none?, "border-red-400 focus:outline-red-600": video_transcription.errors[:transcription_file].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :language %>
+    <%= form.text_field :language, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_transcription.errors[:language].none?, "border-red-400 focus:outline-red-600": video_transcription.errors[:language].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :model %>
+    <%= form.text_field :model, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_transcription.errors[:model].none?, "border-red-400 focus:outline-red-600": video_transcription.errors[:model].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :output_format %>
+    <%= form.text_field :output_format, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_transcription.errors[:output_format].none?, "border-red-400 focus:outline-red-600": video_transcription.errors[:output_format].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :transcription_output_type %>
+    <%= form.text_field :transcription_output_type, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_transcription.errors[:transcription_output_type].none?, "border-red-400 focus:outline-red-600": video_transcription.errors[:transcription_output_type].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :transcription_text %>
+    <%= form.textarea :transcription_text, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_transcription.errors[:transcription_text].none?, "border-red-400 focus:outline-red-600": video_transcription.errors[:transcription_text].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :transcription_json %>
+    <%= form.text_field :transcription_json, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_transcription.errors[:transcription_json].none?, "border-red-400 focus:outline-red-600": video_transcription.errors[:transcription_json].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

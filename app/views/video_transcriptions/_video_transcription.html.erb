@@ -1,0 +1,34 @@
+<div id="<%= dom_id video_transcription %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Video:</strong>
+    <%= video_transcription.video_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Transcription file:</strong>
+    <%= link_to video_transcription.transcription_file.filename, video_transcription.transcription_file, class: "text-gray-700 underline hover:no-underline" if video_transcription.transcription_file.attached? %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Language:</strong>
+    <%= video_transcription.language %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Model:</strong>
+    <%= video_transcription.model %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Output format:</strong>
+    <%= video_transcription.output_format %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Transcription output type:</strong>
+    <%= video_transcription.transcription_output_type %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Transcription text:</strong>
+    <%= video_transcription.transcription_text %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Transcription json:</strong>
+    <%= video_transcription.transcription_json %>
+  </div>
+</div>
