@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_02_203740) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_03_132457) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -42,6 +42,62 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_02_203740) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "morning_worship_videos", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.string "speaker_first_name"
+    t.string "speaker_last_name"
+    t.string "theme"
+    t.string "theme_scripture"
+    t.text "theme_scripture_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["video_id"], name: "index_morning_worship_videos_on_video_id"
+  end
+
+  create_table "video_technical_details", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.decimal "duration", precision: 15, scale: 10
+    t.integer "bitrate"
+    t.integer "file_size"
+    t.string "video_stream"
+    t.string "video_codec"
+    t.string "resolution"
+    t.integer "width"
+    t.integer "height"
+    t.decimal "frame_rate", precision: 15, scale: 10
+    t.string "audio_stream"
+    t.string "audio_codec"
+    t.integer "audio_sample_rate"
+    t.integer "audio_channels"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["video_id"], name: "index_video_technical_details_on_video_id"
+  end
+
+  create_table "video_transcriptions", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.string "language", default: "en"
+    t.string "model"
+    t.string "output_format"
+    t.string "transcription_output_type"
+    t.text "transcription_text"
+    t.jsonb "transcription_json"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["video_id"], name: "index_video_transcriptions_on_video_id"
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "jw_org_url"
+    t.string "video_title"
+    t.string "video_duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "morning_worship_videos", "videos"
+  add_foreign_key "video_technical_details", "videos"
+  add_foreign_key "video_transcriptions", "videos"
 end

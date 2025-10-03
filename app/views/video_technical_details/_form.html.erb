@@ -1,0 +1,87 @@
+<%= form_with(model: video_technical_detail, class: "contents") do |form| %>
+  <% if video_technical_detail.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(video_technical_detail.errors.count, "error") %> prohibited this video_technical_detail from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% video_technical_detail.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :video_id %>
+    <%= form.text_field :video_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:video_id].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:video_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :duration %>
+    <%= form.text_field :duration, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:duration].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:duration].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :bitrate %>
+    <%= form.number_field :bitrate, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:bitrate].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:bitrate].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :file_size %>
+    <%= form.number_field :file_size, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:file_size].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:file_size].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :video_stream %>
+    <%= form.text_field :video_stream, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:video_stream].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:video_stream].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :video_codec %>
+    <%= form.text_field :video_codec, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:video_codec].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:video_codec].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :resolution %>
+    <%= form.text_field :resolution, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:resolution].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:resolution].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :width %>
+    <%= form.number_field :width, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:width].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:width].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :height %>
+    <%= form.number_field :height, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:height].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:height].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :frame_rate %>
+    <%= form.text_field :frame_rate, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:frame_rate].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:frame_rate].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :audio_stream %>
+    <%= form.text_field :audio_stream, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:audio_stream].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:audio_stream].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :audio_codec %>
+    <%= form.text_field :audio_codec, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:audio_codec].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:audio_codec].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :audio_sample_rate %>
+    <%= form.number_field :audio_sample_rate, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:audio_sample_rate].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:audio_sample_rate].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :audio_channels %>
+    <%= form.number_field :audio_channels, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video_technical_detail.errors[:audio_channels].none?, "border-red-400 focus:outline-red-600": video_technical_detail.errors[:audio_channels].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>
