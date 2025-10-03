@@ -22,6 +22,11 @@
   </div>
 
   <div class="my-5">
+    <%= form.label :local_video_file_path %>
+    <%= form.text_field :local_video_file_path, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video.errors[:local_video_file_path].none?, "border-red-400 focus:outline-red-600": video.errors[:local_video_file_path].any?}] %>
+  </div>
+
+  <div class="my-5">
     <%= form.label :video_title %>
     <%= form.text_field :video_title, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video.errors[:video_title].none?, "border-red-400 focus:outline-red-600": video.errors[:video_title].any?}] %>
   </div>
@@ -29,6 +34,11 @@
   <div class="my-5">
     <%= form.label :video_duration %>
     <%= form.text_field :video_duration, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video.errors[:video_duration].none?, "border-red-400 focus:outline-red-600": video.errors[:video_duration].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :video_category %>
+    <%= form.select :video_category, Video.video_categories.keys.map { |k| [k.humanize(capitalize: false), k] }, { prompt: "Select a category" }, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": video.errors[:video_category].none?, "border-red-400 focus:outline-red-600": video.errors[:video_category].any?}] %>
   </div>
 
   <div class="inline">

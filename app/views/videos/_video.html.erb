@@ -1,18 +1,26 @@
 <div id="<%= dom_id video %>" class="w-full sm:w-auto my-5 space-y-5">
   <div>
-    <strong class="block font-medium mb-1">Video file:</strong>
+    <strong class="block font-medium mb-1">Video File:</strong>
     <%= link_to video.video_file.filename, video.video_file, class: "text-gray-700 underline hover:no-underline" if video.video_file.attached? %>
   </div>
   <div>
-    <strong class="block font-medium mb-1">Jw org url:</strong>
+    <strong class="block font-medium mb-1">jw.org url:</strong>
     <%= video.jw_org_url %>
   </div>
   <div>
-    <strong class="block font-medium mb-1">Video title:</strong>
+    <strong class="block font-medium mb-1">Local video file path:</strong>
+    <%= video.local_video_file_path %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Video Title:</strong>
     <%= video.video_title %>
   </div>
   <div>
-    <strong class="block font-medium mb-1">Video duration:</strong>
+    <strong class="block font-medium mb-1">Video Duration:</strong>
     <%= video.video_duration %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Video Category:</strong>
+    <%= video.video_category.humanize(capitalize: false) %>
   </div>
 </div>
