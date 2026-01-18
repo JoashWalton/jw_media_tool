@@ -7,7 +7,7 @@ class Video < ApplicationRecord
   has_one_attached :video_file
 
   has_one :video_technical_detail, dependent: :destroy
-  has_one :morning_worship_videos, dependent: :destroy
+  has_one :morning_worship_video, dependent: :destroy
   has_many :video_transcriptions, dependent: :destroy
 
   validates :jw_org_url, presence: true
