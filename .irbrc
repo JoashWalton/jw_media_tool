@@ -107,3 +107,7 @@ def test_video_agg(video_file_path)
     puts 'Failed to process video file'
   end
 end
+
+def parse
+  EpubParsing::MeetingWorkbookParser.new("tmp/storage/epubs/meeting_workbooks/2026/mwb_E_202605.epub")
+end
