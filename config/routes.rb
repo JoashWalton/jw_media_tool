@@ -1,6 +1,7 @@
 require "sidekiq/web" # require the web UI
 
 Rails.application.routes.draw do
+  resources :images
   resources :morning_worship_videos
   resources :video_transcriptions
   resources :video_technical_details

@@ -1,0 +1,142 @@
+<%= form_with(model: image, class: "contents") do |form| %>
+  <% if image.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% image.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :image_source_url %>
+    <%= form.text_field :image_source_url, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:image_source_url].none?, "border-red-400 focus:outline-red-600": image.errors[:image_source_url].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :image_file_name %>
+    <%= form.text_field :image_file_name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:image_file_name].none?, "border-red-400 focus:outline-red-600": image.errors[:image_file_name].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :image_file_path %>
+    <%= form.text_field :image_file_path, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:image_file_path].none?, "border-red-400 focus:outline-red-600": image.errors[:image_file_path].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :image_file_size %>
+    <%= form.text_field :image_file_size, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:image_file_size].none?, "border-red-400 focus:outline-red-600": image.errors[:image_file_size].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :image_resolution %>
+    <%= form.text_field :image_resolution, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:image_resolution].none?, "border-red-400 focus:outline-red-600": image.errors[:image_resolution].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :image_width %>
+    <%= form.number_field :image_width, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:image_width].none?, "border-red-400 focus:outline-red-600": image.errors[:image_width].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :image_height %>
+    <%= form.number_field :image_height, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:image_height].none?, "border-red-400 focus:outline-red-600": image.errors[:image_height].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :image_credit %>
+    <%= form.text_field :image_credit, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:image_credit].none?, "border-red-400 focus:outline-red-600": image.errors[:image_credit].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_title %>
+    <%= form.text_field :publication_title, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_title].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_title].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_month %>
+    <%= form.text_field :publication_month, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_month].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_month].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_year %>
+    <%= form.number_field :publication_year, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_year].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_year].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_url %>
+    <%= form.text_field :publication_url, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_url].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_url].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publicaiton_article_title %>
+    <%= form.text_field :publicaiton_article_title, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publicaiton_article_title].none?, "border-red-400 focus:outline-red-600": image.errors[:publicaiton_article_title].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_article_scripture %>
+    <%= form.text_field :publication_article_scripture, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_article_scripture].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_article_scripture].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_chapter_number %>
+    <%= form.number_field :publication_chapter_number, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_chapter_number].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_chapter_number].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_chapter_title %>
+    <%= form.text_field :publication_chapter_title, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_chapter_title].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_chapter_title].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_page %>
+    <%= form.number_field :publication_page, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_page].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_page].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_paragraph_number %>
+    <%= form.number_field :publication_paragraph_number, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_paragraph_number].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_paragraph_number].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_paragraph_question %>
+    <%= form.text_field :publication_paragraph_question, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_paragraph_question].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_paragraph_question].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_paragraph_text %>
+    <%= form.text_field :publication_paragraph_text, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_paragraph_text].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_paragraph_text].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_paragraph_scriptures %>
+    <%= form.text_field :publication_paragraph_scriptures, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_paragraph_scriptures].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_paragraph_scriptures].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :publication_meeting_part %>
+    <%= form.text_field :publication_meeting_part, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:publication_meeting_part].none?, "border-red-400 focus:outline-red-600": image.errors[:publication_meeting_part].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :image_caption %>
+    <%= form.text_field :image_caption, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:image_caption].none?, "border-red-400 focus:outline-red-600": image.errors[:image_caption].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :image_subject_keywords %>
+    <%= form.text_field :image_subject_keywords, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:image_subject_keywords].none?, "border-red-400 focus:outline-red-600": image.errors[:image_subject_keywords].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :image_bible_characters %>
+    <%= form.text_field :image_bible_characters, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": image.errors[:image_bible_characters].none?, "border-red-400 focus:outline-red-600": image.errors[:image_bible_characters].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

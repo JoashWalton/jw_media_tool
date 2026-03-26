@@ -1,8 +1,12 @@
-# Video Object Attributes
-# * jw_org_url :string,
-# * video_title :string,
-# * video_duration :string,
-# * local_video_file_path :string
+# Video Attributes
+# id: integer
+# jw_org_url: string
+# video_title: string
+# video_duration: string
+# created_at: datetime
+# updated_at: datetime
+# local_video_file_path: string
+# video_category: integer
 class Video < ApplicationRecord
   has_one_attached :video_file
 
