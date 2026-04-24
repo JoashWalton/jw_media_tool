@@ -128,7 +128,7 @@ GEM
       epub-cfi
       rchardet (>= 1.6.1)
       rexml
-    erb (6.0.2)
+    erb (6.0.4)
     erubi (1.13.1)
     et-orbi (1.4.0)
       tzinfo
